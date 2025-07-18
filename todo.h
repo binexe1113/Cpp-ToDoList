@@ -60,3 +60,6 @@ void CompleteTask(list<Tasks>& tasklist);
 
 void RemoveTask(list<Tasks>& tasklist);
 
+void LoadTasks(list<Tasks>& taskList, const string& filename);
+
+void SaveTasks(const list<Tasks>& taskList, const string&);

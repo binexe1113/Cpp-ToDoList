@@ -2,12 +2,15 @@
 #include<list>
 #include <string>
 #include<cctype>
+#include<fstream>
 #include "todo.h"
 
 using namespace std;
 
 int main(){
     list<Tasks> taskList;  
+    system("cls");
+    LoadTasks(taskList,"tasks.json");
     bool running = true;
     int choice;
 
@@ -71,7 +74,12 @@ int main(){
             system("pause");
 
         case 6:
-            break;
+            system("cls");
+            SaveTasks(taskList,"tasks.json");
+            cout<<"Tasks saved sucsefully.";
+            cout<<"\nGoodbye.";
+            system("pause");
+            running=false;
             
 
 
@@ -80,4 +88,5 @@ int main(){
         
 
  }while(running);
+ return 0;
 }

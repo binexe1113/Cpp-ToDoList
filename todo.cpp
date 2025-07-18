@@ -2,6 +2,7 @@
 #include<list>
 #include <string>
 #include<cctype>
+#include<fstream>
 #include<iomanip>
 #include "todo.h"
 
@@ -148,3 +149,28 @@ void CompleteTask(list<Tasks>& taskList){
     cout<<"Task with ID: "<<inputID<< "Not found"<<endl;
 
 } 
+
+void SaveTasks(const list<Tasks>& taskList, const string& filename ) {
+    json j = taskList;
+    ofstream file(filename);
+    if (file.is_open()) {
+        file << j.dump(4); // pretty print
+        file.close();
+        cout << "Tasks saved to file.\n";
+    } else {
+        cerr << "Failed to open file for writing.\n";
+    }
+}
+
+void LoadTasks(list<Tasks>& taskList, const string& filename ) {
+    ifstream file(filename);
+    if (file.is_open()) {
+        json j;
+        file >> j;
+        file.close();
+        taskList = j.get<list<Tasks>>();
+        cout << "Tasks loaded from file.\n";
+    } else {
+        cerr << "File not found or failed to open.\n";
+    }
+}
