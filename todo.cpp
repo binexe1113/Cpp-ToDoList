@@ -65,11 +65,12 @@ bool AddTask(list<Tasks>& taskList) {
 }
 
 void showList(list<Tasks>& taskList){
-    for (const auto& task : taskList) {
-        cout << "ID: " << task.id << ", Date: " << task.date << ", Description: " << task.description << endl;
-        break;
+        for(auto i = taskList.begin(); i != taskList.end();i++){
+            cout << "ID: " << i->id << ", Date: " << i->date << ", Description: " << i->description << endl;
+            
             }
         }
+    
 
 void EditTask(list<Tasks>& taskList) {
     if (taskList.empty()) {

@@ -12,7 +12,7 @@ int main(){
     int choice;
 
     do{
-    cout<< "=== TO-DO LIST ==="<<endl;
+    cout<< "====== TO-DO LIST ======"<<endl;
     cout<<"1. View Tasks"<<endl;   
     cout<<"2. Add Task"<<endl;   
     cout<<"3. Edit Task"<<endl;   
@@ -58,7 +58,6 @@ int main(){
             cout<<"==============Tasks list=============="<<endl;
             showList(taskList);
             cout<<"======================================"<<endl;
-            EditTask(taskList);
             CompleteTask(taskList);
             system("pause");
             break;
