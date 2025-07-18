@@ -24,3 +24,8 @@ class Tasks{
 int ChoiceValidator();
 
 bool AddTask(list<Tasks>& taskList);
+
+void showList(list<Tasks>& taskList);
+
+void EditTask(list<Tasks>& taskList);
+

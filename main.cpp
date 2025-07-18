@@ -23,21 +23,37 @@ int main(){
     choice = ChoiceValidator();
     switch (choice){
         case 1:
+        system("cls");
             if(taskList.size()==0){
                 cout<<"No tasks have been added.";
                 system("pause");
                 break;
             }
-            for (const auto& task : taskList) {
-                cout << "ID: " << task.id << ", Date: " << task.date << ", Description: " << task.description << endl;
-                break;
-            }
+            cout<<"==============Tasks list=============="<<endl;
+            showList(taskList);
+            cout<<"======================================"<<endl;
+            system("pause");
+            break;
+
         case 2:
+            system("cls");
             if(AddTask(taskList)){
                 cout<<"Task added suscefully!"<<endl;
+                system("pause");
+                break;
             }else{
                 cout<<"ERROR!"<<endl;
+                system("pause");
+                break;
             }
+        case 3:
+            system("cls");
+            cout<<"==============Tasks list=============="<<endl;
+            showList(taskList);
+            cout<<"======================================"<<endl;
+            EditTask(taskList);
+
+
             
     }
         

@@ -63,3 +63,47 @@ bool AddTask(list<Tasks>& taskList) {
     cout << "Task added in order by date.\n";
     return true;
 }
+
+void showList(list<Tasks>& taskList){
+    for (const auto& task : taskList) {
+        cout << "ID: " << task.id << ", Date: " << task.date << ", Description: " << task.description << endl;
+        break;
+            }
+        }
+
+void EditTask(list<Tasks>& taskList) {
+    if (taskList.empty()) {
+        cout << "No tasks to edit.\n";
+        return;
+    }
+
+    int editId;
+    cout << "Enter the ID of the task to edit: ";
+    cin >> editId;
+    cin.ignore(); // discard newline
+
+    for (auto& task : taskList) {
+        if (task.id == editId) {
+            string newDate, newDescription;
+
+            cout << "Current Date: " << task.date << "\n";
+            cout << "Enter new date (or press Enter to keep current): ";
+            getline(cin, newDate);
+            if (!newDate.empty()) {
+                task.date = newDate;
+            }
+
+            cout << "Current Description: " << task.description << "\n";
+            cout << "Enter new description (or press Enter to keep current): ";
+            getline(cin, newDescription);
+            if (!newDescription.empty()) {
+                task.description = newDescription;
+            }
+
+            cout << "Task updated successfully.\n";
+            return;
+        }
+    }
+
+    cout << "Task with ID " << editId << " not found.\n";
+}
