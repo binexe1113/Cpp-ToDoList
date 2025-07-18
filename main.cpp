@@ -55,6 +55,8 @@ int main(){
             showList(taskList);
             cout<<"======================================"<<endl;
             EditTask(taskList);
+            system("pause");
+            break;
 
         case 4:
             system("cls");
@@ -72,6 +74,7 @@ int main(){
             cout<<"======================================"<<endl;
             RemoveTask(taskList);
             system("pause");
+            break;
 
         case 6:
             system("cls");
