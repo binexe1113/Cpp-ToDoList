@@ -29,3 +29,7 @@ void showList(list<Tasks>& taskList);
 
 void EditTask(list<Tasks>& taskList);
 
+void CompleteTask(list<Tasks>& tasklist);
+
+void RemoveTask(list<Tasks>& tasklist);
+

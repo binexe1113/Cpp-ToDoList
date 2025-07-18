@@ -107,3 +107,43 @@ void EditTask(list<Tasks>& taskList) {
 
     cout << "Task with ID " << editId << " not found.\n";
 }
+
+void RemoveTask(list<Tasks>& taskList){
+     if (taskList.empty()) {
+        cout << "No tasks to remove.\n";
+        return;
+    }
+    int inputID;
+    cout<<("Entere the ID of the task to remove: ");
+    cin>>inputID;
+
+    for(auto i = taskList.begin(); i != taskList.end();i++){
+        if(i->id==inputID){
+            taskList.erase(i);
+            cout<<"Task removed suscefully"<<endl;
+            return;
+        }
+    }
+    cout<<"Task with ID: "<<inputID<< "Not found"<<endl;
+
+} 
+
+void CompleteTask(list<Tasks>& taskList){
+     if (taskList.empty()) {
+        cout << "No tasks to complete.\n";
+        return;
+    }
+    int inputID;
+    cout<<("Entere the ID of the task you completed: ");
+    cin>>inputID;
+
+    for(auto i = taskList.begin(); i != taskList.end();i++){
+        if(i->id==inputID){
+            taskList.erase(i);
+            cout<<"Task removed suscefully"<<endl;
+            return;
+        }
+    }
+    cout<<"Task with ID: "<<inputID<< "Not found"<<endl;
+
+} 

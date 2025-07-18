@@ -53,6 +53,28 @@ int main(){
             cout<<"======================================"<<endl;
             EditTask(taskList);
 
+        case 4:
+            system("cls");
+            cout<<"==============Tasks list=============="<<endl;
+            showList(taskList);
+            cout<<"======================================"<<endl;
+            EditTask(taskList);
+            CompleteTask(taskList);
+            system("pause");
+            break;
+
+        case 5:
+            system("cls");
+            cout<<"==============Tasks list=============="<<endl;
+            showList(taskList);
+            cout<<"======================================"<<endl;
+            RemoveTask(taskList);
+            system("pause");
+
+        case 6:
+            break;
+            
+
 
             
     }
